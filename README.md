@@ -21,5 +21,5 @@
 > open http://localhost:4200/ in your browser
 
 ## Tools Used
-#### - MEAN Stack - MongoDB, Express.js, Angular, Node.js
-#### - Bulma.io frontend styling
+#### - Stack: MEAN (MongoDB, Express.js, Angular, Node.js)
+#### - Angular Material + Bulma.io for styling
