@@ -2,12 +2,12 @@
 
 #### A simple application for you to record your grinding/lifeskill sessions and find out your gains!
 
+#### Screenshots: 
 
 ![Alt text](screenshots/main-view.PNG "main-view")
 ![Alt text](screenshots/analysis.PNG "analysis")
 ![Alt text](screenshots/new-activity.PNG "new-activity")
 ![Alt text](screenshots/new-session.PNG "new-session")
-
 
 ## How to install
 
@@ -20,7 +20,6 @@
 
 > open http://localhost:4200/ in your browser
 
-
 ## Tools Used
-### - MEAN Stack, MongoDB, Express.js, Angular, Node.js
-### - Bulma.io
+#### - MEAN Stack - MongoDB, Express.js, Angular, Node.js
+#### - Bulma.io frontend styling
