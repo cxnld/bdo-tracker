@@ -23,3 +23,6 @@
 ## Tools Used
 #### - Stack: MEAN (MongoDB, Express.js, Angular, Node.js)
 #### - Angular Material + Bulma.io for styling
+
+## Improvements
+#### - add user authentication, introduce userID into database
