@@ -3,7 +3,7 @@
 #### A simple application for you to record your grinding/lifeskill sessions and find out your gains!
 
 
-![Alt text](/screenshots/main-view.png "Optional Title")
+![Alt text](screenshots/main-view.PNG "Optional Title")
 
 
 ##### This repository contains the code for both the Angular frontend application as well as the NodeJS API. 
