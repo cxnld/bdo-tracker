@@ -9,6 +9,13 @@
 ![Alt text](screenshots/new-session.PNG "new-session")
 
 
-##### This repository contains the code for both the Angular frontend application as well as the NodeJS API. 
+## How to install
 
-> Don't forget to run `npm install` in both the **api** and **frontend** folders to install dependencies
+> run `npm install` in both the **api** and **frontend** folders to install modules
+
+> make sure to install mongoDB, application database default connects to mongodb://localhost:27017'
+
+> `nodemon app.js` in the **api** folder
+> `ng serve` in the **frontend** folder
+
+> open http://localhost:4200/ in your browser
