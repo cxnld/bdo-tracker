@@ -13,9 +13,14 @@
 
 > run `npm install` in both the **api** and **frontend** folders to install modules
 
-> make sure to install mongoDB, application database default connects to mongodb://localhost:27017'
+> make sure to install mongoDB, application database default connects to mongodb://localhost:27017
 
 > `nodemon app.js` in the **api** folder
 > `ng serve` in the **frontend** folder
 
 > open http://localhost:4200/ in your browser
+
+
+## Tools Used
+### - MEAN Stack, MongoDB, Express.js, Angular, Node.js
+### - Bulma.io
