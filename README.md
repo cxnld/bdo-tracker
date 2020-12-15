@@ -1,7 +1,6 @@
-# Black Desert Online Activity Tracker
+# BDO Activity Tracker
 
-#### Track your progression throughout the game
-
+#### A simple application for you to record your grinding/lifeskill sessions and find out your gains!
 
 
 ##### This repository contains the code for both the Angular frontend application as well as the NodeJS API. 
