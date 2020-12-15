@@ -1,0 +1,95 @@
+<div class="centered-content">
+  <div class="main-container">
+
+
+    <!-- Sidebar Panel -->
+    <div class="sidebar has-background-white">
+
+      <h1 class="title has-text-primary">
+        Activities
+      </h1>
+
+      <div class="list-menu">
+        <a class="list-menu-item" *ngFor="let activity of activities" [routerLink]="['/activities', activity._id]" routerLinkActive="is-active">
+          <p>{{ activity.title }}</p>
+        </a>
+      </div>
+
+      <button class="button is-primary has-text-white" routerLink="/new-activity">+ New Activity</button>
+
+    </div>
+
+    <!-- Session Panel -->
+    <div class="task-list-container  has-background-light">
+      <div *ngIf="sessions">
+
+
+        <div class="top-bar">
+          <h1 class="title has-text-primary">
+            Sessions
+          </h1>
+          <button class="button is-primary has-text-white" style="margin-right: 10px;" [routerLink]="['/activities', selectedActivityID, 'analysis']">Analysis</button>
+
+          <div class="dropdown is-hoverable is-right">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span class="icon is-small">
+                  <i class="fas fa-cog" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+              <div class="dropdown-content">
+                <a [routerLink]="['/activities', selectedActivityID, 'edit-activity']" class="dropdown-item">
+                  Edit Activity
+                </a>
+                <a (click)="onDeleteActivityClick()" class="dropdown-item has-text-danger">
+                  Delete Activity
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Session Element -->
+        <div class="session" *ngFor="let session of sessions">
+
+          <div class="session-text">
+            <p>{{ session.title }}</p>
+          </div>
+
+          <div class="session-buttons">
+            <button class="button" [routerLink]="['/activities', selectedActivityID, 'sessions', session._id, 'edit-session']">
+              <div class="icon">
+                <i class="fas fa-edit"></i>
+              </div>
+            </button>
+
+            <button class="button is-danger" (click)="onDeleteSessionClick(session._id)" style="margin-left: 10px;">
+              <div class="icon">
+                <i class="fas fa-trash"></i>
+              </div>
+            </button>
+          </div>
+
+        </div>
+
+        <h3 class="empty-state-text" *ngIf="sessions.length === 0">No sessions, create a session by clicking the button below.</h3>
+
+        <button class="circle-add-button button is-primary" routerLink="./new-session">
+          <mat-icon class="white-icon">add</mat-icon>
+        </button>
+
+      </div>
+
+      <!-- No activity selected -->
+      <div *ngIf="!sessions">
+        <h3 class="empty-state-text">Please select an activity from the sidebar</h3>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

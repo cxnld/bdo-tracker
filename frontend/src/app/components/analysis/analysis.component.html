@@ -1,0 +1,69 @@
+<div class="centered-content" *ngIf="isDataLoaded">
+  <div class="analysis-container has-background-white">
+    <!----------------------------------------------------------------->
+    <div class="title-bar has-background-light">
+
+      <button class="button is-primary has-text-white top-left">Go back</button>
+      <h1 class="title-text has-text-primary">
+        Analysis - {{ activityInfo.title }}
+      </h1>
+      <button class="button is-primary has-text-white top-right" [routerLink]="['/activities', activityID]">Go back</button>
+
+
+    </div>
+
+    <!----------------------------------------------------------------->
+    <div class="bottom-part" *ngIf="arrayOfSessions.length">
+      <!--------------------------------------------------------------->
+      <div class="left has-background-white">
+        <div class="details has-background-light">
+          <h1 class="text has-text-primary">
+            # of Sessions :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{arrayOfSessions.length}}
+            <br>
+            Total Time Spent :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{hours}} hr {{minutes}} min
+            <br>
+            Total Money :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{totalMoneyMade | number:'1.0-0' }}
+          </h1>
+          <br>
+          <table class="table is-bordered is-fullwidth">
+            <tr>
+              <td></td>
+              <td>loot/hr</td>
+              <td>price</td>
+              <td>$/hr</td>
+            </tr>
+            <tr *ngFor="let item of sessionsCombined.items">
+              <td>{{ item.name }}</td>
+              <td>{{ item.averageQuantity | number:'1.0-0' }}</td>
+              <td>{{ item.price | number:'1.0-0' }}</td>
+              <td>{{ item.moneyPerHour | number:'1.0-0' }}</td>
+            </tr>
+          </table>
+
+          <h1 class="text has-text-primary">
+            Money / Hour :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ moneyPerHour | number:'1.0-0' }}
+          </h1>
+        </div>
+      </div>
+      <!--------------------------------------------------------------->
+      <div class="right">
+        <div class="graph">
+          <ngx-charts-pie-chart
+          [view]="view"
+          [results]="graphData"
+          [scheme]="colorScheme"
+          [gradient]="true"
+          [labels]="true"
+          >
+          </ngx-charts-pie-chart>
+        </div>
+      </div>
+    <!----------------------------------------------------------------->
+    </div>
+
+    <div *ngIf="!arrayOfSessions.length">
+      <p class="empty-state-text">No sessions found.</p>
+    </div>
+
+  </div>
+</div>

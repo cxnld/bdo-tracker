@@ -1,0 +1,47 @@
+<div class="centered-content">
+  <div class="modal-box">
+
+    <h1 class="title">
+      Create a new activity
+    </h1>
+
+    <form [formGroup]="activityForm">
+
+      <input formControlName="title" class="input has-background-light is-medium" placeholder="Enter activity name..."/>
+      <hr>
+
+       <div formArrayName="items">
+
+        <div *ngFor="let item of items.controls; let pointIndex=index" [formGroupName]="pointIndex">
+          <div class="row">
+
+            <input class="input has-background-light is-medium row-item" placeholder="Enter item name" formControlName="name" type="text"/>
+            <input class="input has-background-light is-medium row-item" placeholder="Enter item price" formControlName="price" type="number"/>
+
+            <button class="button is-danger row-item" (click)="deleteItem(pointIndex)">
+              <div class="icon">
+                <i class="fas fa-trash"></i>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
+        <button class="button is-centered add" (click)="addItem()">
+          <h1>Add another item</h1>
+        </button>
+
+      </div>
+
+    </form>
+    <br>
+
+    <div class="buttons is-right">
+      <button class="button is-medium" routerLink="/">Cancel</button>
+      <button class="button is-primary has-text-white is-medium" (click)="createActivity()">Create</button>
+    </div>
+
+    <!-- {{ this.activityForm.value | json }} -->
+
+  </div>
+</div>
