@@ -1,6 +1,6 @@
-# BDO Activity Tracker
+# Progression Tracker
 
-#### A simple application for you to record your grinding/lifeskill sessions and find out your gains!
+#### A simple application for you to record your grinding sessions and find out your gains!
 
 #### Screenshots: 
 
