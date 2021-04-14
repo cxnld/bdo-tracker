@@ -1,6 +1,7 @@
 # Progression Tracker
 
-#### A simple application for you to record your grinding sessions and find out your gains!
+#### A simple application for you to record your activity sessions and find out your gains!
+#### Use it for exercising, calorie logging, sales etc.
 
 #### Screenshots: 
 
